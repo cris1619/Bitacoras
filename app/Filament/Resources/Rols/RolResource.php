@@ -22,6 +22,12 @@ class RolResource extends Resource
 
     protected static ?string $recordTitleAttribute = 'nombre_rol';
 
+    protected static ?string $navigationLabel = 'Roles';
+
+    protected static string | \UnitEnum | null $navigationGroup = 'Seguridad';
+
+    protected static ?int $navigationSort = 1;
+
     public static function form(Schema $schema): Schema
     {
         return RolForm::configure($schema);

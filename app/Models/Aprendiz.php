@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use App\Services\BitacoraService;
 
 class Aprendiz extends Model
 {
@@ -75,4 +76,14 @@ class Aprendiz extends Model
             'aprendiz_id'
         );
     }
+
+    protected static function booted()
+{
+    static::created(function ($aprendiz) {
+
+        BitacoraService::generarBitacoras($aprendiz);
+
+    });
 }
+
+    }

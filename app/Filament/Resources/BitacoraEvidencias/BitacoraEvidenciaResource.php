@@ -24,6 +24,12 @@ class BitacoraEvidenciaResource extends Resource
 
     protected static ?string $recordTitleAttribute = 'numero_bitacora';
 
+    protected static ?string $navigationLabel = 'Bitácoras';
+
+    protected static string | \UnitEnum | null $navigationGroup = 'Gestión Seguimiento';
+
+    protected static ?int $navigationSort = 2;
+
     public static function form(Schema $schema): Schema
     {
         return BitacoraEvidenciaForm::configure($schema);

@@ -24,6 +24,12 @@ class AprendizResource extends Resource
 
     protected static ?string $recordTitleAttribute = 'nombres';
 
+    protected static ?string $navigationLabel = 'Aprendices';
+
+    protected static string | \UnitEnum | null $navigationGroup = 'Gestión Académica';
+
+    protected static ?int $navigationSort = 1;
+
     public static function form(Schema $schema): Schema
     {
         return AprendizForm::configure($schema);

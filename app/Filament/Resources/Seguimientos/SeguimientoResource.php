@@ -24,6 +24,12 @@ class SeguimientoResource extends Resource
 
     protected static ?string $recordTitleAttribute = 'numero_seguimiento';
 
+    protected static ?string $navigationLabel = 'Seguimientos';
+
+    protected static string | \UnitEnum | null $navigationGroup = 'Gestión Seguimiento';
+
+    protected static ?int $navigationSort = 1;
+
     public static function form(Schema $schema): Schema
     {
         return SeguimientoForm::configure($schema);

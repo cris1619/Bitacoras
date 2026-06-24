@@ -22,6 +22,12 @@ class ProgramaFormacionResource extends Resource
 
     protected static ?string $recordTitleAttribute = 'nombre_programa';
 
+    protected static ?string $navigationLabel = 'Programas';
+
+    protected static string | \UnitEnum | null $navigationGroup = 'Configuración';
+
+    protected static ?int $navigationSort = 1;
+
     public static function form(Schema $schema): Schema
     {
         return ProgramaFormacionForm::configure($schema);
